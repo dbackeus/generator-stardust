@@ -7,9 +7,11 @@ module.exports = yeoman.generators.Base.extend({
     this.mkdir('client/compatibility')
     this.mkdir('client/stylesheets')
     this.mkdir('client/views')
+    this.mkdir('collections')
     this.mkdir('lib')
     this.mkdir('server')
     this.mkdir('server/lib')
+    this.mkdir('server/publications')
     this.mkdir('public')
     this.mkdir('public/fonts')
     this.mkdir('public/images')
@@ -22,6 +24,8 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('client/views/index.html', 'client/views/index.html')
     this.copy('client/views/index.coffee', 'client/views/index.coffee')
 
+    this.spawnCommand('meteor', ['remove', "autopublish"])
+
     var packages = [
       "iron:router",
       "mizzao:bootstrap-3",
@@ -29,6 +33,6 @@ module.exports = yeoman.generators.Base.extend({
       "peerlibrary:peerdb",
     ]
 
-    //this.spawnCommand('meteor', ['add'].concat(packages))
+    this.spawnCommand('meteor', ['add'].concat(packages))
   }
 })
