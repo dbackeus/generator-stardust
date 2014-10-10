@@ -1,3 +1,3 @@
-Template.<%= name %>.helpers()
+Template.<%= name.split('/').join('_') %>.helpers()
 
-Template.<%= name %>.events()
+Template.<%= name.split('/').join('_') %>.events()
