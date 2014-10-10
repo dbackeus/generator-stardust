@@ -27,6 +27,7 @@
     "url": "https://github.com/dbackeus/generator-stardust/issues"
   },
   "dependencies": {
+    "inflection": "^1.5.1",
     "yeoman-generator": "^0.17.0",
     "chalk": "^0.5.0",
     "yosay": "^0.3.0"
