@@ -30,7 +30,9 @@ module.exports = yeoman.generators.Base.extend({
       "iron:router",
       "mizzao:bootstrap-3",
       "coffeescript",
-      "aldeed:collection2"
+      "aldeed:collection2",
+      "aldeed:autoform",
+      "mquandalle:bower",
     ]
 
     // https://github.com/matb33/meteor-collection-hooks
