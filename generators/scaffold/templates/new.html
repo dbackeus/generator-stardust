@@ -1,0 +1,14 @@
+<template name="<%= classified %>New">
+  <div class="container">
+    <div class="row-fluid">
+      <h1>New <%= classified %></h1>
+      {{#autoForm collection="<%= classified %>" type="insert" id="new-<%= dasherized %>-form"}}
+        {{> <%= classified %>Fields}}
+        <button type="submit" class="btn btn-primary">
+          <span class="glyphicon glyphicon-plus"></span>
+          Create
+        </button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

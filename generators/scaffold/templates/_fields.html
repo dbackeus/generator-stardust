@@ -1,0 +1,5 @@
+<template name="<%= classified %>Fields">
+  <% properties.forEach(function (property) { %>
+    {{> afQuickField name='<%= property.name %>'}}
+  <% }) %>
+</template>

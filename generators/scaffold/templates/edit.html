@@ -1,0 +1,11 @@
+<template name="<%= classified %>Edit">
+  <div class="container">
+    <div class="row-fluid">
+      <h1>Edit <%= classified %></h1>
+      {{#autoForm collection="<%= classified %>" doc=this type="update" id="edit-<%= dasherized %>-form"}}
+        {{> <%= classified %>Fields}}
+        <button type="submit" class="btn btn-primary">Update</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>
