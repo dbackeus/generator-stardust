@@ -9,9 +9,11 @@ module.exports = yeoman.generators.PropertisedBase.extend({
 
     this.template('model.coffee', 'collections/'+filename+'.coffee', this.templateData)
     this.template('model_publication.coffee', 'server/publications/'+tableized+'.coffee', this.templateData)
-  },
 
-  done: function() {
-    this.log("Don't forget to subscribe via Meteor.subscribe('"+this.templateData.tableized+"')")
+    this.on('end', function() {
+      this.log("")
+      this.log("Subscribe to your model via:")
+      this.log("  Meteor.subscribe('"+this.templateData.tableized+"')")
+    })
   }
 })
