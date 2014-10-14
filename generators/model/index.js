@@ -1,19 +1,17 @@
 var yeoman = require('yeoman-generator')
 var inflection = require('inflection')
+require('../../lib/propertised_base')
 
-module.exports = yeoman.generators.NamedBase.extend({
+module.exports = yeoman.generators.PropertisedBase.extend({
   model: function() {
-    var tableized = inflection.tableize(this.name)
+    var tableized = this.templateData.tableized
     var filename = inflection.singularize(tableized)
 
-    data = {
-      tableized: tableized,
-      classified: inflection.classify(this.name)
-    }
+    this.template('model.coffee', 'collections/'+filename+'.coffee', this.templateData)
+    this.template('model_publication.coffee', 'server/publications/'+tableized+'.coffee', this.templateData)
+  },
 
-    this.template('model.coffee', 'collections/'+filename+'.coffee', data)
-    this.template('model_publication.coffee', 'server/publications/'+tableized+'.coffee', data)
-
-    this.log("Don't forget to add Meteor.subscribe('"+tableized+"') where it makes sense!")
+  done: function() {
+    this.log("Don't forget to subscribe via Meteor.subscribe('"+this.templateData.tableized+"')")
   }
 })
