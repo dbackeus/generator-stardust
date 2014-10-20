@@ -7,4 +7,14 @@ root = global ? window
     type: <%= property.type %><% }) %>
 }
 
+<%= classified %>.allow
+    insert: (userId, doc) ->
+      true
+
+    update: (userId, doc, fields, modifier) ->
+      true
+
+    remove: (userId, doc) ->
+      true
+
 root.<%= classified %> = <%= classified %>

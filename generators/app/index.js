@@ -24,7 +24,7 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('client/views/index.html', 'client/views/index.html')
     this.copy('client/views/index.coffee', 'client/views/index.coffee')
 
-    this.spawnCommand('meteor', ['remove', "autopublish"])
+    this.spawnCommand('meteor', ['remove', "autopublish", "insecure"])
 
     var packages = [
       "iron:router",
