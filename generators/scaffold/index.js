@@ -21,12 +21,11 @@ module.exports = yeoman.generators.PropertisedBase.extend({
 
     this.on('end', function() {
       var routes = ''
-      routes += '  @route "StoryIndex", path: "/stories"\n'
-      routes += '  @route "StoryShow", path: "/stories/:_id", data: -> Story.findOne(@params._id)\n'
-      routes += '  @route "StoryNew", path: "/stories/new"\n'
-      routes += '  @route "StoryEdit", path: "/stories/:_id/edit", data: -> Story.findOne(@params._id)\n'
+      routes += '  @route "'+this.templateData.classified+'Index", path: "/'+this.templateData.tableized+'"\n'
+      routes += '  @route "'+this.templateData.classified+'New", path: "/'+this.templateData.tableized+'/new"\n'
+      routes += '  @route "'+this.templateData.classified+'Show", path: "/'+this.templateData.tableized+'/:_id", data: -> '+this.templateData.classified+'.findOne(@params._id)\n'
+      routes += '  @route "'+this.templateData.classified+'Edit", path: "/'+this.templateData.tableized+'/:_id/edit", data: -> '+this.templateData.classified+'.findOne(@params._id)\n'
 
-      this.log("")
       this.log("Copy paste these routes into lib/routes.coffee:")
       this.log(routes)
     })
