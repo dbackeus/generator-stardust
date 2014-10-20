@@ -1,6 +1,6 @@
-Template.<%= classified %>New.helpers()
+Template.<%= classified %>Edit.helpers()
 
-Template.<%= classified %>New.events()
+Template.<%= classified %>Edit.events()
 
 AutoForm.hooks
   "edit-<%= dasherized %>-form":
