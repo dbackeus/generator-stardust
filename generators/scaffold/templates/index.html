@@ -1,23 +1,23 @@
 <template name="<%= classified %>Index">
   <div class="container">
     <div class="row-fluid">
-      <h1><%= titleized %></h1>
+      <h1><%= titleizedPlural %></h1>
       <ul class="list-group">
         {{#each <%= pluralized %>}}
           <li class="list-group-item">
-            <a href="{{pathFor "<%= classified %>Show"}}">{{_id}}</a>
+            <a href="{{pathFor "<%= singularized %>"}}">{{_id}}</a>
             <button class="btn btn-danger btn-xs" data-action="delete" style="float:right">
               <span class="glyphicon glyphicon-trash"></span>
               Delete
             </button>
-            <a href="{{pathFor "<%= classified %>Edit" this}}" class="btn btn-xs" style="float:right; margin-right: 20px;">
+            <a href="{{pathFor "edit_<%= singularized %>" this}}" class="btn btn-xs" style="float:right; margin-right: 20px;">
               <span class="glyphicon glyphicon-edit"></span>
               Edit
             </a>
           </li>
         {{/each}}
       </ul>
-      <a href="{{pathFor "<%= classified %>New"}}" class="btn btn-primary">
+      <a href="{{pathFor "new_<%= singularized %>"}}" class="btn btn-primary">
         New <%= classified %>
       </a>
     </div>

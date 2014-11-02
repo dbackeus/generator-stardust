@@ -18,13 +18,14 @@ module.exports = yeoman.generators.PropertisedBase.extend({
     this.template('new.coffee', dirname+'/new.coffee', this.templateData)
     this.template('edit.html', dirname+'/edit.html', this.templateData)
     this.template('edit.coffee', dirname+'/edit.coffee', this.templateData)
+    this.template('resource_controller.coffee', 'controllers/'+this.templateData.tableized+'_controller.coffee', this.templateData)
 
     this.on('end', function() {
       var routes = ''
-      routes += '  @route "'+this.templateData.classified+'Index", path: "/'+this.templateData.tableized+'"\n'
-      routes += '  @route "'+this.templateData.classified+'New", path: "/'+this.templateData.tableized+'/new"\n'
-      routes += '  @route "'+this.templateData.classified+'Show", path: "/'+this.templateData.tableized+'/:_id", data: -> '+this.templateData.classified+'.findOne(@params._id)\n'
-      routes += '  @route "'+this.templateData.classified+'Edit", path: "/'+this.templateData.tableized+'/:_id/edit", data: -> '+this.templateData.classified+'.findOne(@params._id)\n'
+      routes += '  @route "'+this.templateData.tableized+'", controller: "'+this.templateData.classifiedPlural+'Controller", action: "index", name: "'+this.templateData.tableized+'"\n'
+      routes += '  @route "'+this.templateData.tableized+'/new", controller: "'+this.templateData.classifiedPlural+'Controller", action: "new", name: "new_'+this.templateData.singularized+'"\n'
+      routes += '  @route "'+this.templateData.tableized+'/:_id", controller: "'+this.templateData.classifiedPlural+'Controller", action: "show", name: "'+this.templateData.singularized+'"\n'
+      routes += '  @route "'+this.templateData.tableized+'/:_id/edit", controller: "'+this.templateData.classifiedPlural+'Controller", action: "edit", name: "edit_'+this.templateData.singularized+'"\n'
 
       this.log("Copy paste these routes into lib/routes.coffee:")
       this.log(routes)
