@@ -17,4 +17,4 @@ root = global ? window
   edit: ->
     @render "<%= classified %>Edit", data: <%= classified %>.findOne(@params._id)
 
-root.<%= classifiedPlural %>Controller = PostsController
+root.<%= classifiedPlural %>Controller = <%= classifiedPlural %>Controller

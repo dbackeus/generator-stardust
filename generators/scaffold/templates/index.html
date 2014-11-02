@@ -3,7 +3,7 @@
     <div class="row-fluid">
       <h1><%= titleizedPlural %></h1>
       <ul class="list-group">
-        {{#each <%= pluralized %>}}
+        {{#each this}}
           <li class="list-group-item">
             <a href="{{pathFor "<%= singularized %>"}}">{{_id}}</a>
             <button class="btn btn-danger btn-xs" data-action="delete" style="float:right">
