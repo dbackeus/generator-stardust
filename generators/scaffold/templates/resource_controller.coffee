@@ -6,7 +6,7 @@ root = global ? window
   ]
 
   index: ->
-    @render "<%= classified %>Index"
+    @render "<%= classified %>Index", data: <%= classified %>.find()
 
   show: ->
     @render "<%= classified %>Show", data: <%= classified %>.findOne(@params._id)
