@@ -25,6 +25,7 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('client/views/index.html', 'client/views/index.html')
     this.copy('client/views/index.coffee', 'client/views/index.coffee')
     this.copy('controllers/application_controller.coffee', 'controllers/application_controller.coffee')
+    this.copy('client/stylesheets/app.scss', 'client/stylesheets/app.scss')
 
     this.spawnCommand('meteor', ['remove', "autopublish", "insecure"])
 
@@ -36,6 +37,7 @@ module.exports = yeoman.generators.Base.extend({
       "aldeed:autoform",
       "mquandalle:bower",
       "meteorhacks:zones",
+      "fourseven:scss",
     ]
 
     // https://github.com/matb33/meteor-collection-hooks
