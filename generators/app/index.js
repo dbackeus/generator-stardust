@@ -33,6 +33,7 @@ module.exports = yeoman.generators.Base.extend({
       "aldeed:collection2",
       "aldeed:autoform",
       "mquandalle:bower",
+      "meteorhacks:zones",
     ]
 
     // https://github.com/matb33/meteor-collection-hooks
