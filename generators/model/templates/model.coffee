@@ -8,13 +8,13 @@ root = global ? window
 }
 
 <%= classified %>.allow
-    insert: (userId, doc) ->
-      true
+  insert: (userId, doc) ->
+    true
 
-    update: (userId, doc, fields, modifier) ->
-      true
+  update: (userId, doc, fields, modifier) ->
+    true
 
-    remove: (userId, doc) ->
-      true
+  remove: (userId, doc) ->
+    true
 
 root.<%= classified %> = <%= classified %>
