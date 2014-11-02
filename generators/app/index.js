@@ -9,6 +9,7 @@ module.exports = yeoman.generators.Base.extend({
     this.mkdir('client/views')
     this.mkdir('lib')
     this.mkdir('lib/collections')
+    this.mkdir('controllers')
     this.mkdir('server')
     this.mkdir('server/lib')
     this.mkdir('server/publications')
@@ -23,6 +24,7 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('client/views/router/loading.html', 'client/views/router/loading.html')
     this.copy('client/views/index.html', 'client/views/index.html')
     this.copy('client/views/index.coffee', 'client/views/index.coffee')
+    this.copy('controllers/application_controller.coffee', 'controllers/application_controller.coffee')
 
     this.spawnCommand('meteor', ['remove', "autopublish", "insecure"])
 
