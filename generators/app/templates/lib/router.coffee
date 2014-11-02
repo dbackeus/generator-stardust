@@ -6,4 +6,4 @@ Router.configure
   ]
 
 Router.map ->
-  @route "index", path: "/"
+  @route "/", -> @render "index"
