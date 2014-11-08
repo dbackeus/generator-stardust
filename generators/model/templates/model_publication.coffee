@@ -1,2 +1,2 @@
-Meteor.publish '<%= tableized %>', ->
+Meteor.publish "<%= tableized %>", ->
   <%= classified %>.find()
