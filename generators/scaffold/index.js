@@ -14,6 +14,7 @@ module.exports = yeoman.generators.PropertisedBase.extend({
     this.template('index.html', dirname+'/index.html', this.templateData)
     this.template('index.coffee', dirname+'/index.coffee', this.templateData)
     this.template('_fields.html', dirname+'/_fields.html', this.templateData)
+    this.template('_fields.coffee', dirname+'/_fields.coffee', this.templateData)
     this.template('new.html', dirname+'/new.html', this.templateData)
     this.template('new.coffee', dirname+'/new.coffee', this.templateData)
     this.template('edit.html', dirname+'/edit.html', this.templateData)
