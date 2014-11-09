@@ -1,5 +1,3 @@
-root = global ? window
-
 <%= classifiedPlural %>Controller = ApplicationController.extend
   waitOn: -> [
     Meteor.subscribe("<%= tableized %>")
@@ -17,4 +15,4 @@ root = global ? window
   edit: ->
     @render "<%= classified %>Edit", data: <%= classified %>.findOne(@params._id)
 
-root.<%= classifiedPlural %>Controller = <%= classifiedPlural %>Controller
+(global ? window).<%= classifiedPlural %>Controller = <%= classifiedPlural %>Controller

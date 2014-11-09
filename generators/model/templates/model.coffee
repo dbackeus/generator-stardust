@@ -1,5 +1,3 @@
-root = global ? window
-
 <%= classified %> = new Meteor.Collection "<%= tableized %>"
 
 <%= classified %>.attachSchema new SimpleSchema {<% properties.forEach(function (property){ %>
@@ -17,4 +15,4 @@ root = global ? window
   remove: (userId, doc) ->
     true
 
-root.<%= classified %> = <%= classified %>
+(global ? window).<%= classified %> = <%= classified %>
