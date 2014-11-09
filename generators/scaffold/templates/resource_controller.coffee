@@ -2,7 +2,7 @@ root = global ? window
 
 <%= classifiedPlural %>Controller = ApplicationController.extend
   waitOn: -> [
-    Meteor.subscribe("<%= tableized %>"),
+    Meteor.subscribe("<%= tableized %>")
   ]
 
   index: ->
