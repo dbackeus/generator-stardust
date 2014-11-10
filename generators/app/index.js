@@ -7,6 +7,7 @@ module.exports = yeoman.generators.Base.extend({
     this.mkdir('client/compatibility')
     this.mkdir('client/stylesheets')
     this.mkdir('client/views')
+    this.mkdir('client/helpers')
     this.mkdir('lib')
     this.mkdir('lib/collections')
     this.mkdir('controllers')
