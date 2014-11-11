@@ -1,16 +1,14 @@
 {
   "name": "generator-stardust",
-  "version": "1.0.0",
-  "description": "Generators for coffescript based Meteor apps.",
+  "version": "0.5.0",
+  "description": "Generators for Meteor using CoffeeScript.",
   "main": "generators/app/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": { "test": "echo \"Error: no test specified\" && exit 1" },
   "repository": {
     "type": "git",
     "url": "https://github.com/dbackeus/generator-stardust"
   },
-  "keywords": ["yeoman-generator"],
+  "keywords": ["yeoman-generator", "meteor", "meteorjs", "generator", "coffeescript"],
   "author": {
     "name": "David Backeus",
     "email": "duztdruid@gmail.com",
@@ -20,7 +18,8 @@
     "node": ">=0.10.0"
   },
   "files": [
-    "app"
+    "generators",
+    "lib"
   ],
   "license": "MIT",
   "bugs": {
